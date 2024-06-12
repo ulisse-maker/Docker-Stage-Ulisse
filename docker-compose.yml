@@ -2,8 +2,11 @@ name: stage_ulisse
 services:
   nginx:
     container_name: stage_ulisse_nginx
-    image: nginx:latest
+    build:
+      context: ./docker/nginx
+      dockerfile: nginx.Dockerfile
     ports: ["80:80"]
     volumes:
-    - ./AdvertiseInvaders:/var/www/html 
+      - ./AdvertiseInvaders:/var/www/html 
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
       

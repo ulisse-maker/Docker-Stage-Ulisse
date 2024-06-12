@@ -16,3 +16,14 @@ Per collegarsi in remoto alla machina nginx dentro docker:
 docker-compose exec nginx bash
 ```
 
+change directory:
+
+```bash
+cd /etc
+```
+
+list folder and file in a directory:
+
+```bash
+ls
+```
