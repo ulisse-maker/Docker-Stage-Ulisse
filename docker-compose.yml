@@ -1,0 +1,9 @@
+name: stage_ulisse 
+services:
+  nginx:
+    container_name: stage_ulisse_nginx
+    image: nginx:latest
+    ports: ["80:80"]
+    volumes:
+    - ./AdvertiseInvaders:/var/www/html 
+      
