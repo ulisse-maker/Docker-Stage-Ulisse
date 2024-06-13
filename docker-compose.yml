@@ -11,10 +11,12 @@ services:
       - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
   bun_backend:
     container_name: stage_ulisse_bun_backend
-    build:
-      context: ./docker/backend
-      dockerfile: backend.dockerfile
+    image: oven/bun
+    # build:
+    #   context: ./docker/backend
+    #   dockerfile: backend.dockerfile
     ports: ["3000:3000"] 
     volumes: 
       - ./InvadersBackend:/home/bun/app
-      
+    entrypoint: []
+    command: "/bin/sh -c 'bun install && bun run dev'"
